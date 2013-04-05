@@ -1,1 +1,732 @@
-"Test!" 
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/reset.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="css/favicon.png" />
+    <link rel="apple-touch-icon" href="css/apple-touch-icon.png" />
+    <!-- Code Prettifier: -->
+    <link href="css/highlight.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="css/style.css" rel="stylesheet" />
+<script type="text/javascript" src="zepto.min.js"></script>
+<script type="text/javascript">
+  Zepto(function($) {
+    var styles = [],
+      sectionsLength = -1,
+      sections = {},
+      X_DISTINCTION = 1000,
+      Y_DISTINCTION = 800,
+      stepLength = $('.step').length;
+
+    $('.step').each(function(i, step) {
+      var $step = $(step),
+        section, x, y, cls;
+
+      section = $step.data('section') || 'title';
+      if (sections[section] === undefined) {
+        sectionsLength++;
+        sections[section] = {
+          title: $step.find('h2').text(),
+          count: 0
+        };
+      }
+      else {
+        sections[section].count++;
+        $step.prepend($('<h2></h2>').text(sections[section].title));
+      }
+
+      if (section !== 'overview') {
+        x = sectionsLength * X_DISTINCTION;
+        y = sections[section].count * Y_DISTINCTION;
+        $step.data('x', x);
+        $step.data('y', y);
+        cls = 'step-' + (i + 1);
+      }
+      else {
+        x = 0;
+        y = 0;
+        cls = 'overview';
+      }
+      x = Math.floor(x / 5);
+      y = Math.floor(y / 5);
+
+      styles.push('body.impress-on-' + cls + ' {');
+      styles.push('background-position: ' + Math.floor(-y / 2) + 'px ' + Math.floor(-x / 2) + 'px, ' + (x + 50) + 'px ' + (y + 90) + 'px, 0 0');
+      styles.push('}');
+
+      if (i > 0) {
+        styles.push('#step-' + (i + 1) + ':before {');
+        styles.push('content: "' + (i + 1) + '/' + stepLength + '";');
+        styles.push('font-size: 80%;');
+        styles.push('position: absolute;');
+        styles.push('bottom: 20px;');
+        styles.push('right: 20px;');
+        styles.push('opacity: 0.5;');
+        styles.push('}');
+      }
+    });
+    $('<style>' + styles.join(' ') + '</style>').appendTo($('head'));
+
+    impress().init();
+  });
+</script>
+<style>
+  body {
+    background: url(node-plastev.svg), url(node-plastev.svg), -webkit-linear-gradient(top,  rgba(64,65,55,1.0) 0%, rgba(255,255,255,0) 150%);
+    background: url(node-plastev.svg), url(node-plastev.svg), -moz-linear-gradient(top,  rgba(64,65,55,1.0) 0%, rgba(255,255,255,0) 150%);
+    background: url(node-plastev.svg), url(node-plastev.svg), linear-gradient(top,  rgba(64,65,55,1.0) 0%, rgba(255,255,255,0) 150%);
+    background-size: 150px, 50px, 100%;
+    background-position: 0 0, 50px 90px, 0 0;
+
+    -webkit-transition: 1.0s;
+    -moz-transition: 1.0s;
+    transition: 1.0s;
+
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+</style>
+
+  </head>
+
+  <body>
+  <div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
+    <div id="impress">
+    <div class='step decorated' >
+
+<p><br/><br/><br/>
+<img src="node-logo.png" alt="Node.js">
+<br/><br/><br/></p>
+
+<h2>Jiří Prokop</h2>
+
+<h3>Kerio Technologies s.r.o.</h3>
+</div>
+      <div class='step decorated'  data-section="node-js">
+
+<h2>Node.js</h2>
+
+<ul>
+<li>open-source platforma</li>
+<li>MIT licence</li>
+<li>vývoj od roku 2009</li>
+<li>server-side javascript</li>
+<li>aktuální stabilní verze 0.10.2</li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="node-js">
+
+<p>Komunita javascriptových vývojářů.</p>
+
+<ul>
+<li>GitHub (pro srovnání):</li>
+</ul>
+
+<p><strong>bootstrap</strong><br/>
+* 47,925&nbsp;&nbsp;&lt; 14,205<br/>
+<strong>node</strong><br/>
+* 21,350&nbsp;&nbsp;&lt; 3,572<br/>
+<strong>rails</strong><br/>
+* 18,030&nbsp;&nbsp;&lt; 5,381<br/></p>
+</div>
+      <div class='step decorated'  data-section="node-js">
+
+<ul>
+<li>balíčkovací systém
+
+<ul>
+<li>=&gt; ekosystém podobný Ruby</li>
+</ul></li>
+<li><a href="http://www.commonjs.org/specs/modules/1.0/">CommonJS</a>
+
+<ul>
+<li>synchronní <strong>require</strong></li>
+<li><strong>module.exports</strong></li>
+<li>cachování (&quot;singleton&quot;)</li>
+</ul></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="node-js">
+
+<ul>
+<li>nepřeberné množství materiálů ke studiu</li>
+<li>tvořit se dá téměr vše:
+
+<ul>
+<li>jednoduché webové stránky</li>
+<li>skripty</li>
+<li>command-line utility</li>
+<li>multiplayer online hry</li>
+<li>bussiness aplikace</li>
+</ul></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="pod-kapotou">
+
+<h2>Pod kapotou</h2>
+
+<p>Postaveno nad <a href="https://code.google.com/p/v8/">V8</a></p>
+
+<ul>
+<li>tenký C wrapper</li>
+<li>libuv
+
+<ul>
+<li>platform layer</li>
+<li>práce s IO a systémem</li>
+</ul></li>
+<li>javascript core modules</li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="pod-kapotou">
+
+<p><img src="node-js-architecture.svg" alt="Node.js architektura"></p>
+</div>
+      <div class='step decorated'  data-section="zakladni-principy">
+
+<h2>Základní principy</h2>
+
+<p>Event-loop based!</p>
+
+<ul>
+<li>single-thread</li>
+<li>event-driven</li>
+<li>non-blocking</li>
+<li>asynchronous</li>
+</ul>
+
+<p>Single-thread:</p>
+
+<ul>
+<li>podobné <strong>nginx</strong>u</li>
+<li>řeší problém: 1 klient / 1 thread</li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="zakladni-principy">
+
+<p><img src="event-loop.svg" alt="Event-loop"></p>
+</div>
+      <div class='step decorated'  data-section="zakladni-principy">
+    <pre><code class='prettyprint javascript'>console.log("Start");
+setTimeout(function() {
+  console.log("I'm back here in 100ms! Or not?");
+  // blocked by loop!!!
+}, 100);
+
+// 'sleep' 2 seconds in loop
+var now = new Date().getTime();
+while(new Date().getTime() < now + 2000) {
+  // do nothing
+}
+console.log("End");
+</code></pre></div>
+      <div class='step decorated'  data-section="zakladni-principy">
+
+<p>Pozor: výpočetně/CPU náročné aplikace.
+<strong>Blokují!</strong></p>
+
+<ul>
+<li>Řeší se:
+
+<ul>
+<li><a href="http://nodejs.org/api/cluster.html">cluster</a> (podobné HTML5 Workers)</li>
+<li>async. algoritmus</li>
+<li><a href="http://nodejs.org/api/child_process.html">externí procesy</a></li>
+</ul></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<h2>Ekosystém</h2>
+
+<p><strong>NPM - package manager</strong></p>
+
+<p>Vyhledávání modulů:</p>
+
+<ul>
+<li><a href="http://npmjs.org">npmjs.org</a></li>
+<li><a href="http://nodetoolbox.com">nodetoolbox.com</a></li>
+<li><a href="http://nodezoo.com">nodezoo.com</a></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<blockquote>
+<p><strong>module:</strong><br/>
+a thing you can require() in javascript.<br/>
+<strong>package:</strong><br/>
+a thing i can install on the command line.<br/><br/>
+yes, they overlap.</p>
+</blockquote>
+
+<p><br/>
+<a href="https://twitter.com/npmjs/status/315147766055718913">twitter.com/npmjs</a></p>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p>Každý package obsahuje &quot;manifest&quot;.
+<br/><br/>
+<strong>package.json</strong>
+<br/><br/>
+<a href="http://package.json.nodejitsu.com/">Interaktivní package.json</a></p>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p><strong>package.json</strong></p>
+
+<ul>
+<li>dependencies/devDependencies</li>
+<li>name</li>
+<li>version</li>
+<li>author/contributors</li>
+<li>scripts (např. <strong>npm start</strong>)</li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<ul>
+<li><p>package může být instalován:</p>
+
+<ul>
+<li>lokálně</li>
+<li>globálně</li>
+</ul></li>
+<li><p>nástroje většinou globálně <br/><code class='inline prettyprint'>npm install grunt-cli -g</code></p></li>
+<li><p>ostatní lokálně <br/><code class='inline prettyprint'>npm install async</code></p></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p>Instalace dependencies z <strong>package.json</strong><br/>
+<code class='inline prettyprint'>npm install</code>
+<br/><br/>
+Přidání do <strong>package.json</strong> (musí být validní!)<br/>
+<code class='inline prettyprint'>npm install underscore --save</code></p>
+
+<p>(zjistí verzi, nainstaluje a uloží)</p>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p>Aktuální verze modulu v repozitáři<br/>
+<code class='inline prettyprint'>npm info component version</code>
+<br/><br/>
+Hledání modulů<br/>
+<code class='inline prettyprint'>npm search component</code></p>
+
+<p>(vhodnější hledat z webu)</p>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p>Update modulů na novější verze<br/>
+<code class='inline prettyprint'>npm update</code>
+<br/><br/>
+Využívá tzv. <a href="http://semver.org">sémantické verzování</a></p>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p>Packages se ukládají do složky <strong>node_modules</strong>.</p>
+
+<ul>
+<li>většina packagů je javascriptový kód</li>
+<li>=&gt; lze se snadno podívat, co modul dělá</li>
+<li>=&gt; případně hot-fixnout</li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p>Instalovaný modul se načte funkcí <strong>require</strong>:</p>
+<pre><code class='prettyprint javascript'>var _ = require('underscore');
+var evens = _.filter([1, 2, 3], function(num) {
+  return num % 2 == 0;
+});
+</code></pre>
+<p><br/>
+Uvnitř modulu se používají <strong>relativní cesty</strong>.</p>
+<pre><code class='prettyprint javascript'>var cow = require('./violet-cow/moodul.js');
+cow.moo();
+</code></pre></div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p><strong>TIP!</strong>
+<br/>
+Adresář <strong>node_modules/</strong></p>
+
+<ul>
+<li>přidat do <strong>.gitignore</strong></li>
+<li>nekomitovat!</li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p><strong>TIP!</strong>
+<br/>
+Proměnná <strong>PATH</strong></p>
+
+<ul>
+<li>přidat <strong>./node_modules/.bin</strong></li>
+</ul>
+
+<p><br/></p>
+
+<h3>Zpřístupní lokální command-line utility!</h3>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p>Seznam instalovaných modulů:</p>
+
+<ul>
+<li>lokálně<br/><code class='inline prettyprint'>npm list</code>
+<br/><br/></li>
+<li>globálně<br/><code class='inline prettyprint'>npm list -g</code></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p>Nepřeberné množství packagů.
+<br/><br/>
+<strong>Pěkně rozdělené + základní přehled:</strong>
+<br/>
+<a href="https://github.com/joyent/node/wiki/modules">Node.js Wiki - Modules</a></p>
+</div>
+      <div class='step decorated'  data-section="ekosystem">
+
+<p><strong>Doporučuju:</strong></p>
+
+<ul>
+<li><a href="https://github.com/caolan/async">async</a></li>
+<li><a href="http://underscorejs.org/">underscore</a></li>
+<li><a href="https://github.com/MatthewMueller/cheerio">cheerio</a></li>
+<li><a href="https://github.com/mikeal/request">request</a></li>
+</ul>
+
+<p><strong>Command-line nástroje:</strong></p>
+
+<ul>
+<li><a href="http://yeoman.io/">yeoman</a></li>
+<li><a href="http://gruntjs.com/">grunt</a></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="io">
+
+<h2>I/O</h2>
+
+<p>Moduly pro práci s file-systémem:</p>
+
+<ul>
+<li><strong>fs</strong>
+
+<ul>
+<li>asynchronní/synchronní verze</li>
+</ul></li>
+<li><strong>path</strong></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="io">
+
+<p>Čtení ze souboru:</p>
+<pre><code class='prettyprint javascript'>var options = { encoding: 'utf-8' };
+fs.readFile('fs-read.js', options, function(err, data) {
+  if (err) throw err;
+  console.log(data);
+});
+</code></pre>
+<p>(pozor na <strong>buffer</strong>)</p>
+</div>
+      <div class='step decorated'  data-section="io">
+
+<p>Čtení ze souboru (synchronní):</p>
+<pre><code class='prettyprint javascript'>var options = { encoding: 'utf-8' };
+var data = fs.readFileSync('fs-read.js', options);
+console.log(data);
+</code></pre></div>
+      <div class='step decorated'  data-section="io">
+
+<p>Modul <strong>process</strong>:</p>
+
+<ul>
+<li>stdin/stdout/stderr</li>
+<li>env</li>
+<li>cwd</li>
+<li>kill</li>
+<li>nextTick (vs Timers.setImmediate)</li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="io">
+
+<p>Modul <strong>child_process</strong>:</p>
+
+<ul>
+<li>exec/fork/spawn
+
+<ul>
+<li>stdin/stdout/stderr</li>
+<li>on (message/close/exit events)</li>
+</ul></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="io">
+
+<p>Největší změna v poslední době...<br/>
+Modul <strong>stream</strong>:</p>
+
+<ul>
+<li>usnaďuje tvorbu vlastních streamů</li>
+<li>naštěstí zpětně kompatibilní</li>
+<li>zajímavost:
+
+<ul>
+<li>nové API - modul do starších verzí</li>
+</ul></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="io">
+
+<p>Modul <strong>stream</strong>:<br/>
+Pomocné base classes:</p>
+
+<ul>
+<li>Readable</li>
+<li>Writable</li>
+<li>Duplex</li>
+<li>Transform</li>
+<li>PassThrough</li>
+</ul>
+
+<p><strong>readable.pipe(writable)</strong></p>
+</div>
+      <div class='step decorated'  data-section="udalosti">
+
+<h2>Události</h2>
+
+<p>Modul <strong>events</strong>:<br/>
+class <strong>EventEmitter</strong>:</p>
+
+<ul>
+<li>emit</li>
+<li>addListener/on</li>
+<li>once</li>
+<li>removeListener/removeAllListeners</li>
+</ul>
+
+<p><strong>Pozor na maxListeners (default 10)!</strong></p>
+</div>
+      <div class='step decorated'  data-section="sit">
+
+<h2>Síť</h2>
+
+<p>Nativní moduly pro (server+client):</p>
+
+<ul>
+<li>Sockets (TCP, UDP)
+
+<ul>
+<li>podporuje unix sockets</li>
+</ul></li>
+<li>TLS/SSL</li>
+<li>HTTP/HTTPS</li>
+</ul>
+
+<p>Moduly, které usnadňují práci, např.:</p>
+
+<ul>
+<li><a href="https://github.com/visionmedia/express">express.js</a>/<a href="https://github.com/senchalabs/connect">connect</a>/<a href="https://github.com/spumko/hapi/">hapi</a></li>
+<li><a href="https://github.com/LearnBoost/socket.io">socket.io</a>/<a href="https://github.com/einaros/ws">ws</a></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="sit">
+
+<p>HTTP server:</p>
+<pre><code class='prettyprint javascript'>var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
+</code></pre></div>
+      <div class='step decorated'  data-section="expressjs">
+
+<h2>OT: Express.js</h2>
+
+<p><a href="http://expressjs.com/">Express.js</a></p>
+
+<p>Pokud se nainstaluje globálně<br/>
+<code class='inline prettyprint'>npm install -g express</code>
+<br/><br/>
+umí vytvořit kostru aplikace<br/>
+<code class='inline prettyprint'>express &lt;app-name&gt;</code>
+<br/><br/>
+(ukázat strukturu aplikace)</p>
+</div>
+      <div class='step decorated'  data-section="expressjs">
+
+<p>HTTP server s Express.js:</p>
+<pre><code class='prettyprint javascript'>var express = require('express');
+var app = express();
+app.get('/', function(req, res){
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+});
+app.listen(3000);
+</code></pre></div>
+      <div class='step decorated'  data-section="coffeescript">
+
+<h2>OT: CoffeeScript</h2>
+
+<p><a href="http://coffeescript.org/">CoffeeScript</a> - vhodný doplněk</p>
+
+<h3>11. místo na GitHubu</h3>
+
+<ul>
+<li>plus
+
+<ul>
+<li>zjednodušená syntaxe javascriptu</li>
+</ul></li>
+<li>mínus
+
+<ul>
+<li>přidává další vrstvu abstrakce</li>
+<li>je potřeba kompilovat</li>
+<li>exceptions - čísla řádek nesedí</li>
+</ul></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="coffeescript">
+
+<ul>
+<li>rychlé skriptování, prototypování</li>
+<li>vzal si <strong>Good Parts</strong> javascriptu</li>
+<li>odebral vše, co bylo &quot;zbytečné&quot;</li>
+<li>vše je výraz</li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="coffeescript">
+    <pre><code class='prettyprint coffeescript'>vypis = (text) -> console.log text
+pozdravy = ['Ahoj', 'Nazdar', 'Zdar', 'Čus']
+vypis "#{pozdrav} Coffee!" for pozdrav in pozdravy
+
+objekt =
+  jmeno: 'Dr. Zoidberg'
+  obsazeni:
+    Futurama: [1..136]
+
+console.log "#{objekt.jmeno}" if objekt?
+console.log objekt?.neexistujiciFunkce()?.toString()
+</code></pre></div>
+      <div class='step decorated'  data-section="neveslo-se">
+
+<h2>Co se jinam nevešlo</h2>
+
+<p>Modul <strong><a href="http://nodejs.org/docs/latest/api/domain.html">domains</a></strong></p>
+
+<ul>
+<li>bezpečnější ošetřování chyb bez ztráty kontextu
+
+<ul>
+<li>process.on(&#39;uncaughtException&#39;) <strong>!!</strong></li>
+</ul></li>
+</ul>
+
+<p>Náhrada shell skriptů, pipe<br/><br/>
+<code class='inline prettyprint'>#!/usr/bin/env node</code></p>
+</div>
+      <div class='step decorated'  data-section="uzitecne-moduly">
+
+<h2>Užitečné moduly</h2>
+
+<ul>
+<li><a href="https://npmjs.org/package/async">async</a></li>
+<li><a href="https://npmjs.org/package/underscore">underscore</a></li>
+<li><a href="https://npmjs.org/package/cheerio">cheerio</a></li>
+<li><a href="https://npmjs.org/package/optimist">optimist</a></li>
+<li><a href="https://npmjs.org/package/mocha">mocha</a></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="uzitecne-moduly">
+
+<ul>
+<li><a href="https://npmjs.org/package/nodemon">nodemon</a></li>
+<li><a href="https://npmjs.org/package/node-dev">node-dev</a></li>
+<li><a href="https://npmjs.org/package/node-inspector">node-inspector</a></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="zdroje">
+
+<h2>Další zdroje</h2>
+
+<ul>
+<li><a href="http://howtonode.org/">How to Node</a></li>
+<li><a href="http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/">Understanding the node.js event loop</a></li>
+<li><a href="http://blog.nodejitsu.com/package-dependencies-done-right">Package.json dependencies done right</a></li>
+<li><a href="http://overapi.com/nodejs/">Node.js</a></li>
+<li><a href="https://github.com/substack/stream-handbook">Stream handbook</a></li>
+<li><a href="http://blog.nodejs.org/2012/12/20/streams2/">Stream2 blog-post</a></li>
+<li><a href="https://dl.dropbox.com/u/3685/presentations/streams2/streams2-ko.pdf">Stream2 slides</a></li>
+<li><a href="http://www.2ality.com/2011/12/nodejs-shell-scripting.html">Node.js - shell scripting</a></li>
+<li><a href="http://vimeo.com/56166857">Modular web applications with Node.js and Express</a></li>
+</ul>
+</div>
+      <div class='step decorated'  data-section="dotazy">
+
+<h2>Dotazy?</h2>
+</div>
+      <div class='step decorated'  data-section="zaver">
+
+<h2>Děkuji za pozornost!</h2>
+
+<p><br/><br/><br/><br/><br/><br/><br/><br/></p>
+
+<h3><strong>Btw.:</strong></h3>
+
+<h3><a href="http://nodeknockout.com/">NKO 2013</a> 6.-8. září</h3>
+</div>
+      <div class='step decorated'  data-section="zbytek">
+
+<h2>Co se jinam nevešlo</h2>
+
+<p>NPM dependence může být gitový repozitář/tar/zip.
+<br/><br/>
+<strong>Pozor!</strong> Některé package obsahují nativní C/C++ kód (je potřeba mít dev. prostředí)
+<br/><br/>
+Node.js umí běžet v experimentálním módu s ES6 (nová verze javascriptu)
+<code class='inline prettyprint'>node --harmony</code></p>
+</div>
+      <div class='step decorated'  data-section="zbytek">
+
+<blockquote>
+<p>Common <strong>simple tasks should be easy</strong>, or we aren&#39;t doing our job.</p>
+</blockquote>
+
+<p><br/>
+Ryan Diehl (autor Node.js)</p>
+</div>
+      <div class='step decorated'  data-section="zbytek">
+
+<blockquote>
+<p>People often say that <strong>Node is better than most other platforms at this stuff</strong>, but in my opinion, that is less of a compliment and more of an <strong>indictment of the current state of software</strong>.</p>
+</blockquote>
+
+<p><br/>
+Ryan Diehl (autor Node.js)</p>
+</div>
+      <div class='step decorated'  data-section="zbytek">
+
+<blockquote>
+<p><strong>Being better than the next guy isn&#39;t enough; we have to be the best imaginable.</strong></p>
+</blockquote>
+
+<p><br/>
+Ryan Diehl (autor Node.js)</p>
+
+      </div>
+    <script src="js/impress.js"></script>
+  </body>
+</html>

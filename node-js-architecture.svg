@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="node-js-architecture.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="52.228405"
+     inkscape:cy="505.55643"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
+       x="77.714294"
+       y="119.79074"
+       id="text2985"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2987"
+         x="77.714294"
+         y="119.79074">JavaScript</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
+       x="149.71428"
+       y="278.36218"
+       id="text2989"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2991"
+         x="149.71428"
+         y="278.36218">C</tspan></text>
+    <rect
+       style="fill:#fff6d5;fill-rule:evenodd;stroke:#666666;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect2993"
+       width="371.42856"
+       height="132.85715"
+       x="297.71429"
+       y="36.933594" />
+    <text
+       xml:space="preserve"
+       style="font-size:30.80996131999999900px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
+       x="484.2901"
+       y="96.069489"
+       id="text2995"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2997"
+         x="484.2901"
+         y="96.069489"
+         style="text-align:center;text-anchor:middle;fill:#666666;fill-opacity:1">Node standard library</tspan><tspan
+         sodipodi:role="line"
+         x="484.2901"
+         y="134.58194"
+         id="tspan2999"
+         style="text-align:center;text-anchor:middle;fill:#666666;fill-opacity:1">(Core modules)</tspan></text>
+    <rect
+       style="fill:#f9f9f9;fill-rule:evenodd;stroke:#666666;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect2993-1"
+       width="371.42856"
+       height="132.85715"
+       x="297.71429"
+       y="170.50504" />
+    <text
+       xml:space="preserve"
+       style="font-size:30.80996131999999900px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
+       x="483.14725"
+       y="229.64093"
+       id="text2995-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="483.14725"
+         y="229.64093"
+         id="tspan2999-0"
+         style="text-align:center;text-anchor:middle;fill:#666666;fill-opacity:1">Node bindings</tspan></text>
+    <rect
+       style="fill:#f9f9f9;fill-rule:evenodd;stroke:#666666;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect2993-1-9"
+       width="371.42856"
+       height="132.85715"
+       x="297.71429"
+       y="261.93359" />
+    <rect
+       y="261.78372"
+       x="487.56442"
+       height="133.15688"
+       width="181.72829"
+       id="rect3048"
+       style="fill:#f9f9f9;fill-rule:evenodd;stroke:#666666;stroke-width:0.70026588000000001px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:30.80996131999999900px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
+       x="577.42078"
+       y="339.00455"
+       id="text2995-7-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="577.42078"
+         y="339.00455"
+         id="tspan2999-0-8"
+         style="text-align:center;text-anchor:middle;fill:#666666;fill-opacity:1">libuv</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3075"
+       y="339.00455"
+       x="391.42081"
+       style="font-size:30.80996131999999900px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="text-align:center;text-anchor:middle;fill:#666666;fill-opacity:1"
+         id="tspan3077"
+         y="339.00455"
+         x="391.42081"
+         sodipodi:role="line">V8</tspan></text>
+    <path
+       style="fill:none;stroke:#666666;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:12, 12;stroke-dashoffset:0;fill-opacity:1"
+       d="m 43.711836,170.93361 254.862034,0"
+       id="path3081"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
